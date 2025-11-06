@@ -2,7 +2,7 @@
 ChatGPT for Excel using VBA, for those that have an older version of Excel or when Copilot is disabled, e.g. through company policy.
 
 ## Usage
-It is required to provide a `prompt`, `model`, `reasoning-level`, and `api-key`:
+Formula requires a `prompt`, `model`, `reasoning-level`, and `api-key`:
 ```excel
 =ChatGPT(prompt, model, reasoning-level, api-key)
 ```
@@ -29,20 +29,39 @@ The prompt, model, reasoning, and api-key can also be located in an Excel cell, 
 *Note the `$` signs in `D1`, `E1`, and `F1` to keep the reference locked if you drag the code down to query the prompts in e.g. cells `A2` to `A10`*
 
 ### Model selection (and price per 1M tokens)
-Available models and their associated costs can be found on: https://platform.openai.com/docs/pricing
+Available models and their associated costs can be found on: [OpenAi pricing](https://platform.openai.com/docs/pricing)
 
 ### Reasoning level
 It is possible to set the reasoning level for the model to `low`, `medium`, or `high`.
 
-For more information see: https://platform.openai.com/docs/guides/reasoning
+For more information see: [OpenAi reasoning](https://platform.openai.com/docs/guides/reasoning)
 
 ## Word of caution
-It is **strongly** advised that after a response has been generated to **hard paste** the value.
+It is **strongly** advised that after a response has been generated to **hard paste** the value. Failing to do so will re-query the OpenAI-api on *each and every*  change in the Excel, both temporarily freezing Excel until the response is returned and costing money for each api-request. To hard paste a value there a two easy options:
 
-Option 1: `ctrl` `c` 🠆 `ctrl` `alt` `v` 🠆 under paste, select `values`
+1: `ctrl` `c` 🠆 `ctrl` `alt` `v` 🠆 under paste, select `values`
 
-Option 2: copy 🠆 right mouse click, under paste select `values`
+2: copy 🠆 right mouse click, under paste select `values`
 
 ## Installation
+### Get an OpenAI api-key
+If you do not have an OpenAI account, create one: [create account](https://auth.openai.com/create-account)
 
-### OpenAI api-key
+Otherwise, login and go to https://platform.openai.com/api-keys to create a key.
+
+*Note: without a valid `api-key` the function will return an error.*
+
+### Option 1: download macro-enabled example Excel
+Easiest option. The Excel contains the "Example with cell reference" from above. Modify the Excel to your needs.
+
+### Option 2: download VBA files and install 
+1. Save the `OpenAi.bas`, `Json.bas`, and `JsonData.cls` files somewhere in your PC
+2. Open the Visual Basic Editor
+3. Choose the File > Import File... menu item
+4. Import all **three** files
+5. You can delete the downloaded files
+
+
+
+## Credits
+This project uses the `vba-json` JSON parser to parse the OpenAI Api response: [mlocati/vba-json](https://github.com/mlocati/vba-json)
