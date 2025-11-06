@@ -1,3 +1,4 @@
+Attribute VB_Name = "OpenAi"
 Option Explicit
 
 Function ChatGpt(prompt As String, model As String, effort As String, apiKey As String) As String
@@ -47,5 +48,3 @@ Function ChatGpt(prompt As String, model As String, effort As String, apiKey As 
 ErrHandler:
     ChatGpt = "Error: " & Err.Description
 End Function
-
-
