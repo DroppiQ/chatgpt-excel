@@ -27,12 +27,12 @@ The prompt, model, reasoning, and api-key can also be located in an Excel cell, 
 
 
 ### Model selection (and price per 1M tokens)
-Available models and their associated costs can be found on: [OpenAi pricing](https://platform.openai.com/docs/pricing).
+Available models and their associated costs can be found on: [OpenAI pricing](https://platform.openai.com/docs/pricing).
 
 ### Reasoning level
 It is possible to set the reasoning level for the model to `low`, `medium`, or `high`.
 
-For more information see: [OpenAi reasoning](https://platform.openai.com/docs/guides/reasoning).
+For more information see: [OpenAI reasoning](https://platform.openai.com/docs/guides/reasoning).
 
 ### Word of caution
 It is **strongly** advised that after a response has been generated to **hard paste** the value. Failing to do so will re-query the OpenAI-api on *each and every*  change in the Excel, both temporarily freezing Excel until the response is returned and costing money for each api-request. To hard paste a value there a two easy options:
