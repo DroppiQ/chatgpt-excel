@@ -30,7 +30,7 @@ The prompt, model, reasoning, and api-key can also be located in an Excel cell, 
 Available models and their associated costs can be found on: [OpenAI pricing](https://platform.openai.com/docs/pricing).
 
 ### Reasoning level
-It is possible to set the reasoning level for the model to `low`, `medium`, or `high`.
+The reasoning level of the selected model can be set to `low`, `medium`, or `high`.
 
 For more information see: [OpenAI reasoning](https://platform.openai.com/docs/guides/reasoning).
 
