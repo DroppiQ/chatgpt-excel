@@ -35,7 +35,7 @@ The reasoning level of the selected model can be set to `low`, `medium`, or `hig
 For more information see: [OpenAI reasoning](https://platform.openai.com/docs/guides/reasoning).
 
 ### Word of caution
-It is **strongly** advised that after a response has been generated to **hard paste** the value. Failing to do so will re-query the OpenAI-api on *each and every*  change in the Excel, both temporarily freezing Excel until the response is returned and costing money for each api-request. To hard paste a value there a two easy options:
+It is **strongly** advised that after a response has been generated to **hard paste** the value. Failing to do so will re-query the OpenAI-api on *each and every*  change in the Excel, both temporarily freezing Excel until the response is returned and costing money for each api-request. To hard paste a value there are two easy options:
 
 1: `ctrl`+`c` 🠆 `ctrl`+`alt`+`v` 🠆 under paste, select `values`
 
