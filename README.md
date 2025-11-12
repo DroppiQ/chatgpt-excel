@@ -4,13 +4,13 @@ ChatGPT for Excel using VBA, bringing the power of AI to any version of Excel.
 ## Usage
 Formula requires a `prompt`, `model`, `reasoning-level`, and `api-key`:
 ```excel
-=ChatGPT(prompt, model, reasoning-level, api-key)
+=CHATGPT(prompt, model, reasoning-level, api-key)
 ```
 
 ### Basic example
 Paste the following code in a cell in Excel to get a response:
 ```excel
-=ChatGPT("How high is the Eifel Tower?", "gpt-5-nano", "low", "YOUR-OPENAI-API-KEY")
+=CHATGPT("How high is the Eifel Tower?", "gpt-5-nano", "low", "YOUR-OPENAI-API-KEY")
 ```
 
 The result will be similar to:
@@ -21,7 +21,7 @@ The result will be similar to:
 ### Example with cell reference
 The prompt, model, reasoning, and api-key can also be located in an Excel cell, e.g. cell `A1` holds the prompt, cell `B1` the model, `C1` the reasoning level, and `D1` the OpenAI api-key. To get a response, paste the following in cell `E1`:
 ```excel
-=ChatGPT(A1, B1, C1, D1)
+=CHATGPT(A1, B1, C1, D1)
 ```
 
 
