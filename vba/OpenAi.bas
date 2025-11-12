@@ -5,7 +5,7 @@ Option Explicit
 ' Source: https://github.com/DroppiQ/chatgpt-excel
 ' License: GNU AGPLv3
 
-Function ChatGpt(prompt As String, model As String, effort As String, apiKey As String) As String
+Function CHATGPT(prompt As String, model As String, effort As String, apiKey As String) As String
     Dim http As Object
     Dim jsonRequest As String
     Dim jsonResponse As String
@@ -25,6 +25,13 @@ Function ChatGpt(prompt As String, model As String, effort As String, apiKey As 
     http.setRequestHeader "Authorization", "Bearer " & apiKey
     http.Send jsonRequest
 
+    ' Check http status
+    If http.Status <> 200 Then
+        CHATGPT = "HTTP Error " & http.Status & ": " & http.StatusText & vbCrLf & http.responseText
+        Exit Function
+    End If
+
+
     ' Read the response
     jsonResponse = http.responseText
     
@@ -33,7 +40,7 @@ Function ChatGpt(prompt As String, model As String, effort As String, apiKey As 
     
     ' Throw error if json is not valid
     If Not data.IsValid Then
-        ChatGpt = "Error: invalid JSON: " & jsonResponse
+        CHATGPT = "Error: invalid JSON: " & jsonResponse
         Exit Function
     End If
     
@@ -42,13 +49,13 @@ Function ChatGpt(prompt As String, model As String, effort As String, apiKey As 
     
     ' Return response if it exists, otherwise throw error
     If item.IsScalar Then
-        ChatGpt = item.ScalarValue
+        CHATGPT = item.ScalarValue
         Exit Function
     Else
-        ChatGpt = "Error: unable to find text field in JSON: " & jsonResponse
+        CHATGPT = "Error: unable to find text field in JSON: " & jsonResponse
         Exit Function
     End If
 
 ErrHandler:
-    ChatGpt = "Error: " & Err.Description
+    CHATGPT = "Error: " & Err.Description
 End Function
